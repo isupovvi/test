@@ -2,14 +2,12 @@ import 'bootstrap-css-only';
 import 'normalize.css';
 import angular from 'angular';
 import appComponent from './app.component';
-import ComponentsModule from './components/components';
 
-import {
-  postComponent,
-} from './components/post/index.js';
+import { postComponent } from './components/post.js';
+import { commentComponent } from './components/comment.js';
 
-angular.module('app', [
-  ComponentsModule.name
-]).component('app', appComponent)
+angular.module('app', [])
+  .component('app', appComponent)
   .component('post', postComponent)
+  .component('comment', commentComponent)
 ;

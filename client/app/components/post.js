@@ -4,22 +4,20 @@ let postComponent = {
   restrict: 'E',
   bindings: {},
   template: `
-  <div>
-    <div>post works</div>
+  <div style="text-align: center;">
+    <p style="font-size: 24px;">{{post.title}}</p>
+    <p style="font-size: 14px;">{{post.value}}</p>
     <div>
-        <input type="text" ng-model="user.title" />
+      <comment></comment>
     </div>
-    <div>{{user.title}}</div>
-    <div>{{user.value}}</div>
-    <comment></comment>
-</div>`,
+  </div>`,
   controller: PostController,
   controllerAs: 'postCtrl',
 };
 
 PostController.$inject = ["$scope"];
 function PostController ($scope) {
-  $scope.user = {title: 'guest', value: 'visitor'};
+  $scope.post = {title: 'guest', value: 'visitor'};
 }
 
 export {
